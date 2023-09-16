@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wool Quality Assurance Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transport Form</h1>
+        <form action="/submit_quality_assurance" method="POST">
+            <label for="">Factory Name:</label>
+            <input type="text" id="FactoryName" name="FactoryName" required>
+
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" required>
+
+            <label for="fiberDiameter">Fiber Diameter (microns):</label>
+            <input type="number" id="fiberDiameter" name="fiberDiameter" step="0.1" required>
+
+            <label for="stapleLength">Staple Length (cm):</label>
+            <input type="number" id="stapleLength" name="stapleLength" step="0.1" required>
+
+            <label for="cleanliness">Cleanliness (%):</label>
+            <input type="number" id="cleanliness" name="cleanliness" min="0" max="100" required>
+
+            <label for="strength">Fiber Strength (N/tex):</label>
+            <input type="number" id="strength" name="strength" step="0.1" required>
+
+            <label for="color">Color:</label>
+            <select id="color" name="color" required>
+                <option value="red">White</option>
+                <option value="off-white">Off-White</option>
+                <option value="natural">Natural</option>
+                <option value="Black">Black</option>
+                <option value="Brown">Brown</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="remarks">Additional Remarks:</label>
+            <textarea id="remarks" name="remarks" rows="4" cols="50"></textarea>
+
+            <input type="submit" value="Submit">
+            <form action="untitled.php" method="POST">
+
+        </form>
+    </div>
+</body>
+</html>
+ 

@@ -4,127 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm to Fabric Wool Monitoring</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+   
+    <script src="./script.js"> </script>   
     <style>
         body{
-            background-color: antiquewhite;
-            background-size: 1000%;
-            background-repeat: no-repeat;
-            font-size: x-large;
-        }
-        p{text-align: center;
-         }
-        
-        h2{
-            text-align: center;
-        }
-
-        @media screen and (max-aspect-ratio: 9/16) {
-            body {
-                
-                background-size: 10000%;
-                background-repeat: no-repeat;
-           }
-        }
-        @media screen and (min-aspect-ratio: 16/9) {
-      body {
             
-            background-size: 1000%;
+            background-color: rgba(70, 183, 123, 0.5);
             background-repeat: no-repeat;
-           }
+            background-size: 1500px;
         }
-        @media screen and (min-aspect-ratio: 1/1) {
-      body {
-  
-        background-size: 350%;
-        background-repeat: no-repeat;
-           }
-        }
-        @media screen and (min-aspect-ratio: 4/3) {
-      body {
-      
-        background-size: 300%;
-        background-repeat: no-repeat;
-           }
+        nav ul {
+            list-style-type: none;
         }
 
-        button{
-           
-             background-color: rgb(186, 239, 239);
-             margin-right: 40px;
-             margin: auto;
-             border-radius: 10%;
-             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
-           
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
         }
 
-        .button-container{
-            
+        nav a {
+            text-decoration:currentColor;
+            color: #fff;
+            font-weight: bold;
+                }
+
+        #button_container{
             display: flex;
-            margin: 10px;
+        }
+
+        #logo{
+            
+            position: relative;
+            top: 0;
+            right: 0;
+            border-radius: 100%;
+            height: 90px;
+        }
+
+        #gps {
+            border-radius: 100%;
+            height: 90px;
             
         }
 
-        #headd{
-            color: antiquewhite;
-            background-color: rgb(164, 79, 79);
-            margin: 10px , 10px , 10px; 
-            padding-top: 20px;
-            padding-bottom: 20px;
-            font-family: cursive;
-            
+       
+
+        .card-container1 {
+            display: flex;
+            justify-content: space-between; 
         }
 
+        
+        .card {
+            width: calc(50% - 10px); 
+            margin: 5px; 
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2{
+            color: black;
+        }
+
+        p{
+            font-size: large;
+        }
+
+        
 
     </style>
-   
-    
-     
 </head>
 <body>
-    <header>
-        <h1 id="headd">Farm to Fabric Wool Monitoring</h1>
-        <nav>
-            <ul class="button-container">
-                <button style="font-size:large;margin: 10px;" ><a href="">About</a></button>
-                <button style="font-size:large;margin: 10px;"><a href="">Farm</a></button>
-                <button style="font-size:large;margin: 10px;"><a href="./wool.jpg">Production </a></button>
-                <button style="font-size:large;margin: 10px;"><a href="./process.jpg">Processing</a></button>
-                <button style="font-size:large;margin: 10px;"><a href="./frontback.html">GPS track.</a></button>
-                <button style="font-size:large;margin: 10px;"><a href="">forms</a></button>
-            </ul>
-        </nav>
-    </header>
-    <div id="s1">
-    <section id="about" style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">About Us</a></h2>
-        <p>Welcome to Farm to Fabric Wool Monitoring! We are dedicated to ensuring the highest quality wool products from farm to your fabric. Learn more about our journey and commitment to sustainability.</p>
-    </section></div>
-    <div id="s2">
-    <section id="farm" style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">Our Farms</a></h2>
-        <p>Discover the farms where our wool is sourced. We prioritize ethical and sustainable farming practices to bring you the best wool.</p>
-    </section></div>
-    <div id="s3">
-    <section id="processing" style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">Processing</a></h2>
-        <p>Learn about our state-of-the-art processing facilities where the wool is cleaned, spun, and prepared for fabric production.</p>
-    </section></div>
-    <div id="s4">
-    <section id="fabric"style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">GPS Tracking</a></h2>
-        <p>Get the current location of the product.</p>
-    </section></div>
-    <div id="s5">
-    <section id="Production" style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">Production</a></h2>
-        <p>Production sites in INDIA</p></div>
-    <div id="s6">
-    <section id="formms" style="background-color: rgb(253, 186, 186);">
-        <h2 style="font-family: cursive;background-color: rgb(205, 117, 117);"><a href="">FORMS</a></h2>
-        <p>Various types of forms to get data</p></div>
-    </section>
+    <script>function initMap() {
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    
+        // Simulated GPS data (replace with real data)
+        const gpsCoordinates = [
+            {lat: -34.397, lng: 150.644},
+            {lat: -34.297, lng: 150.744},
+            // Add more coordinates as needed
+        ];
+    
+        let currentIndex = 0;
+    
+        function updateMarker() {
+            const coords = gpsCoordinates[currentIndex];
+            const marker = new google.maps.Marker({
+                position: coords,
+                map: map,
+                title: `Latitude: ${coords.lat}, Longitude: ${coords.lng}`
+            });
+    
+            map.setCenter(coords);
+    
+            currentIndex++;
+            if (currentIndex >= gpsCoordinates.length) {
+                currentIndex = 0;
+            }
+    
+            setTimeout(() => {
+                marker.setMap(null);
+                updateMarker();
+            }, 2000); // Update every 2 seconds
+        }
+    
+        updateMarker();
+    }
 
+
+    </script>
+    
+    
+ 
+        <nav id="left" class="column" style="background-color: rgb(46, 33, 33);color: #fff;" >
+			<h1 id="headd" style="font-size:50px ;"> <img id="logo" src="./logoo.jpg">
+                Farm to Fabric Wool Monitoring</h1>
+			<ul id="button_container">
+				
+				<li><button class="but1" style="font-size:xx-large;border-radius: 5px;background-color: red;color: white;box-shadow: 5px 5px 6px 2px rgba(0,0,0,.8)" ><a href="./wool.jpg"><b>Production</b> </a></button></li>
+				<li><button class="but2" style="font-size:xx-large;border-radius: 5px;background-color: red;color: white;box-shadow: 5px 5px 6px 2px rgba(0,0,0,.8)"><a href="./process.jpg"><b>Processing</b></a></button></li>
+				<li><button class="but3" style="font-size:xx-large;border-radius: 5px;background-color: red;color: white;box-shadow: 5px 5px 6px 2px rgba(0,0,0,.8)"><a href="./lo.html"><b>GPS track.</b></a></button></li>
+				<li><button class="but4" style="font-size:xx-large;border-radius: 5px;background-color: red;color: white;box-shadow: 5px 5px 6px 2px rgba(0,0,0,.8)"><a href="all form.html"><b>Forms</b></a></button></li>
+			</ul>
+        </nav>
+        <hr >
+   
+         <div class="card-container1">
+                <div class="card" >
+                    <h2 style="font-family: cursive;"><a href="./wool.jpg">Production</a></h2>
+                    <p><b>Production sites in INDIA</b></p>
+                    
+                </div>
+                <div class="card" >
+                    <h2 style="font-family: cursive;"><a href="./process.jpg">Processing</a></h2>
+                    <p><b>Learn about our state-of-the-art processing facilities where the wool is cleaned, spun, and prepared for fabric production.</b></p>
+                    
+                </div>
+               
+                <div class="card">
+                    <h2 style="font-family: cursive;"><a href="all form.html">FORMS</a></h2>
+                    <p><b>Various types of forms to get data</b></p>
+                </div>
+         </div>
+
+         <div class="card-container1">
+            <div class="card" style="background-image: url(./Google-Maps.jpg);">
+                <h2 style="font-family: cursive;"><a href="./lo.html">GPS Tracking</a></h2>
+                <p><b>location of farmer</b></p>
+                <img id="gps" src="./OIP.jpeg">
+            </div>
+
+         </div>
+
+    
+  
     <footer>
         <p>&copy; 2023 Farm to Fabric Wool Monitoring</p>
     </footer>

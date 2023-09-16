@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show Coordinates on Map</title>
+    <!-- Include the Google Maps JavaScript API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtuc9fQjZRNd1lJdmBeFi06rvMI6Qhf7I&callback=initMap"
+      async
+      defer
+    ></script>
+    <script>
+      // Initialize the map
+      function initMap() {
+        // Create a map object centered at a specific location
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 40.7128, lng: -74.0060 }, // Change to your desired coordinates
+          zoom: 12, // Adjust the zoom level as needed
+        });
+
+        // Create a marker to display the coordinates
+        const marker = new google.maps.Marker({
+          position: { lat: 18.4909876, lng: 73.8071681 }, // Change to your desired coordinates
+          map: map,
+          title: "Coordinates",
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Create a div to hold the map -->
+    <div id="map" style="height: 400px; width: 100%;"></div>
+  </body>
+</html>

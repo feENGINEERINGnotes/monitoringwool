@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side-by-Side Cards</title>
+    <style>
+        /* Container for the cards */
+        .card-container {
+            display: flex;
+            justify-content: space-between; /* Distribute space between cards */
+        }
+
+        /* Individual card styling */
+        .card {
+            width: calc(50% - 10px); /* Set the width for each card (subtract margin) */
+            margin: 5px; /* Add some margin between cards */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Add additional styling as needed */
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>This is the content of Card 1.</p>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>This is the content of Card 2.</p>
+        </div>
+    </div>
+</body>
+</html>

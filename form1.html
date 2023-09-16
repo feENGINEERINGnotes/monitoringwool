@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wool Quality Assurance Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Company feedback form</h1>
+        <form action="/Feedback_form" method="POST">
+            <label for="">Company Name:</label>
+            <input type="text" id="Company Name" name="Companyname" required>
+
+          
+         
+
+            <label for="fiberDiameter">Fiber Diameter :</label>
+            <select id="confirm" name="confirm" required>
+                <option value="Correct">Correct</option>
+                <option value="Wrong">Wrong</option>
+            </select>
+
+
+            <label for="stapleLength">Staple Length :</label>
+             <select id="confirm" name="confirm" required>
+                <option value="Correct">Correct</option>
+                <option value="Wrong">Wrong</option>
+            </select>
+
+            
+
+            <label for="cleanliness">Cleanliness :</label>
+             <select id="confirm" name="confirm" required>
+                <option value="Correct">Correct</option>
+                <option value="Wrong">Wrong</option>
+            </select>
+
+          
+
+            <label for="strength">Fiber Strength :</label>
+            <select id="confirm" name="confirm" required>
+                <option value="Correct">Correct</option>
+                <option value="Wrong">Wrong</option>
+            </select>
+
+
+            <label for="color">Color:</label>
+             <select id="confirm" name="confirm" required>
+				<option value="Correct">Correct</option>
+                <option value="Wrong">Wrong</option>
+            </select>
+
+            <label for="remarks">Additional Remarks:</label>
+            <textarea id="remarks" name="remarks" rows="4" cols="50"></textarea>
+
+            <input type="submit" value="Submit">
+            <form action="untitled.php" method="POST">
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+
